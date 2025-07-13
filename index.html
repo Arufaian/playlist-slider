@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playlist</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Comic+Neue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+      <!-- LEFT SIDE -->
+      <div class="left-side">
+        <h1>Playlist</h1>
+        <p>Songs tied to a certain feeling</p>
+      </div>
+      <!-- RIGHT SIDE -->
+
+      <div class="right-side">
+        <!-- Hidden radios -->
+        <input type="radio" name="slider" id="item-1" checked />
+        <input type="radio" name="slider" id="item-2" />
+        <input type="radio" name="slider" id="item-3" />
+        <input type="radio" name="slider" id="item-4" />
+        <input type="radio" name="slider" id="item-5" />
+
+        <!-- CARDS -->
+        <div class="cards">
+          <!-- Song 1: Seasons -->
+          <label class="card" for="item-1" id="song-1">
+            <img src="./assets/img/ariana.jpg" alt="supernatural" />
+          </label>
+          <!-- Song 2: ivy -->
+          <label class="card" for="item-2" id="song-2">
+            <img src="./assets/img/niki.jpeg" alt="You'll be my heart" />
+          </label>
+          <!-- Song 3: Daylight -->
+          <label class="card" for="item-3" id="song-3">
+            <img src="./assets/img/ariana2.jpeg" alt="7 rings" />
+          </label>
+          <!-- Song 4: One Summer’s Day -->
+          <label class="card" for="item-4" id="song-4">
+            <img src="./assets/img/taylor.jpeg" alt="Daylight" />
+          </label>
+          <!-- Song 5: The only exeption -->
+          <label class="card" for="item-5" id="song-5">
+            <img src="./assets/img/paramore.jpeg" alt="The only exeption" />
+          </label>
+        </div>
+
+        <!-- PLAYER -->
+        <div class="player">
+          <!-- SONG INFO 1: supernatural -->
+          <div class="song-info active" id="song-info-1">
+            <div class="title">Supernatural</div>
+            <div class="song-details">
+              <span class="artist">Ariana Grande</span>
+              <span class="duration">02:43</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <div class="time-indicator">
+              <span class="elapsed"></span>
+              <span class="remaining"></span>
+            </div>
+          </div>
+          <!-- SONG INFO 2: You'll be my heart -->
+          <div class="song-info" id="song-info-2">
+            <div class="title">You'll be my heart</div>
+            <div class="song-details">
+              <span class="artist">NIKI</span>
+              <span class="duration">04:06</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <div class="time-indicator">
+              <span class="elapsed"></span>
+              <span class="remaining"></span>
+            </div>
+          </div>
+          <!-- SONG INFO 3: 7 Rings -->
+          <div class="song-info" id="song-info-3">
+            <div class="title">7 Rings</div>
+            <div class="song-details">
+              <span class="artist">Ariana Grande</span>
+              <span class="duration">02:57</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <div class="time-indicator">
+              <span class="elapsed"></span>
+              <span class="remaining"></span>
+            </div>
+          </div>
+          <!-- SONG INFO 4: Daylight -->
+          <div class="song-info" id="song-info-4">
+            <div class="title">Daylight</div>
+            <div class="song-details">
+              <span class="artist">Taylor Swift </span>
+              <span class="duration">04:54</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <div class="time-indicator">
+              <span class="elapsed"></span>
+              <span class="remaining"></span>
+            </div>
+          </div>
+          <!-- SONG INFO 5: The Only Exception -->
+          <div class="song-info" id="song-info-5">
+            <div class="title">The Only Exception</div>
+            <div class="song-details">
+              <span class="artist">Paramore</span>
+              <span class="duration">04:27</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <div class="time-indicator">
+              <span class="elapsed"></span>
+              <span class="remaining"></span>
+            </div>
+          </div>
+
+          <!-- PLAYER CONTROLS -->
+          <div class="controls">
+            <button id="prev">◁</button>
+            <button id="pause">▐▐</button>
+            <button id="next">▷</button>
+          </div>
+          <!-- EXTRA CONTROLS: Favorite Button Only -->
+          <div class="extra-controls">
+            <button id="favorite" class="favorite-btn">♡</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL (Using the provided pop-up content) -->
+    <div class="modal-overlay" id="notificationModal">
+      <div class="modal-content" id="modalContent">
+        <h2 id="modal-title">Someone sent you a playlist</h2>
+        <p>Hey, it’s for you. I hope you listen to it.</p>
+        <button class="modal-close" onclick="closeModal()">
+          Open Playlist
+        </button>
+      </div>
+    </div>
+
+    <!-- Link to external JS -->
+    <audio id="audioPlayer" hidden></audio>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>
