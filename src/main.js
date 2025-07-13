@@ -4,6 +4,8 @@ window.addEventListener("load", () => {
   preloadCardColors();
 });
 
+document.querySelector(".modal-close").addEventListener("click", closeModal);
+
 function closeModal() {
   document.getElementById("notificationModal").style.display = "none";
 
@@ -34,11 +36,11 @@ document.body.appendChild(audioPlayer);
 const durations = [163, 246, 177, 294, 267];
 const startTimes = [30, 121, 41, 115, 175];
 const audioSources = [
-  "../assets/audio/supernatural.mp3",
-  "../assets/audio/NIKI.mp3",
-  "../assets/audio/7-rings.mp3",
-  "../assets/audio/daylight.mp3",
-  "../assets/audio/the-only-exception.mp3",
+  "/assets/audio/supernatural.mp3",
+  "/assets/audio/NIKI.mp3",
+  "/assets/audio/7-rings.mp3",
+  "/assets/audio/daylight.mp3",
+  "/assets/audio/the-only-exception.mp3",
 ];
 
 function formatTime(seconds) {
